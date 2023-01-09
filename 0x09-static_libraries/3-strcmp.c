@@ -1,23 +1,24 @@
 #include "main.h"
+
 /**
- *_strcmp - compares two strings.
- *@s1: pointer to first string.
- *@s2: pointer to second string.
- *
- *Return: value less than 0 if string is less than the other.
- *value greater than 0 if string is greater than the other.
- *0 if strings are equal.
+ *_strcmp - compares two strings
+ *@s1: A pointer to a character that will be changed
+ *@s2: A pointer to a character that will also be changed/modified/updated
+ *Return: dest
  */
+
 int _strcmp(char *s1, char *s2)
+
 {
-	int counter, cmpVal;
 
-	counter = 0;
-	while (s1[counter] == s2[counter] && s1[counter] != '\0')
-	{
-		counter++;
-	}
+char *str_one = s1;
+char *str_two = s2;
 
-	cmpVal = s1[counter] - s2[counter];
-	return (cmpVal);
+while (*str_one != '\0' && *str_two != '\0' && *str_one == *str_two)
+{
+str_one++;
+str_two++;
+}
+
+return (*str_one - *str_two);
 }
